@@ -5,22 +5,9 @@ class StringParser {
     // TODO: Complete the following function
     fun getResult(inputString: String): Array<String> {
         //throw NotImplementedError("Not implemented")
-        var k : Array<String> = arrayOf()
-        var str: String = inputString
-
-
-        k=getStr(inputString)
-
-
-
-        return (k)
-    }
-
-    fun getSubStr (inputString: String): String{
-        val pattern = "[<].*?[>]|[(].*?[)]|[\\[].*?[\\]]".toRegex()
-        var str = pattern.find(inputString)
-        println(str?.value)
-        return(str?.value.toString())
+        var res : Array<String> = arrayOf()
+        res=getStr(inputString)
+        return (res)
     }
 
     fun getStr (inputString: String): Array<String>{
@@ -32,7 +19,7 @@ class StringParser {
             var tmp: String = s.value.drop(1).dropLast(1).toString()
 
             res.add(tmp)
-            println (tmp)
+           //println (tmp)
             for (s in getStr(tmp)){
                 var tmp: String = s
                 res.add(tmp)
